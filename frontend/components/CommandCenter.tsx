@@ -12,6 +12,7 @@ import {
     Table as TableIcon
 } from 'lucide-react';
 import { mockProjects, mockSources } from '@/lib/demoData';
+import ProjectDetail from './ProjectDetail';
 
 // --- DATABASE CONFIG ---
 const APP_ID = process.env.NEXT_PUBLIC_INSTANTDB_APP_ID || "3cda2be8-9300-4cbd-bfad-6d77d3118ced";
@@ -375,7 +376,7 @@ export default function TowerScoutShell() {
                     </main>
                 </div>
 
-                <ProjectDrawer project={selectedProject} onClose={() => setSelectedProject(null)} />
+                {selectedProject && <ProjectDetail project={selectedProject} onClose={() => setSelectedProject(null)} />}
                 {projects && <GlobalSyncFooter projects={projects} />}
             </div>
             <Agentation />

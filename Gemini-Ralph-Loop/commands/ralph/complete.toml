@@ -1,0 +1,21 @@
+prompt = """
+Mark the Ralph Loop as complete.
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. If no active loop, say: No active loop to complete
+
+3. Update the state:
+   - Set status to completed
+   - Update lastUpdate to current time
+   - Add note: Loop completed successfully
+   - Write back to state.json
+
+4. Display completion summary with:
+   - Goal achieved
+   - Total iterations
+   - Duration (calculated from startTime to now)
+   - Confirmation that files remain in workspace
+"""

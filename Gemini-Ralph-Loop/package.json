@@ -1,0 +1,59 @@
+{
+  "name": "gemini-ralph-loop",
+  "version": "1.0.0",
+  "description": "Self-referential iterative development loops for Gemini CLI - Based on the Ralph Wiggum technique",
+  "main": "dist/mcp-server.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "rebuild": "npm run clean && npm run build",
+    "lint": "eslint src/**/*.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test",
+    "prepublishOnly": "npm run rebuild"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kranthik123/Gemini-Ralph-Loop.git"
+  },
+  "homepage": "https://github.com/kranthik123/Gemini-Ralph-Loop#readme",
+  "bugs": {
+    "url": "https://github.com/kranthik123/Gemini-Ralph-Loop/issues"
+  },
+  "author": "kranthik123",
+  "license": "MIT",
+  "keywords": [
+    "gemini",
+    "gemini-cli",
+    "gemini-cli-extension",
+    "extension",
+    "ralph-loop",
+    "ralph-wiggum",
+    "ai",
+    "automation",
+    "iterative-development",
+    "mcp",
+    "model-context-protocol"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "dist",
+    "commands",
+    "gemini-extension.json",
+    "GEMINI.md",
+    "README.md",
+    "LICENSE"
+  ]
+}

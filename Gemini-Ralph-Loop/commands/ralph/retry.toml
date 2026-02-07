@@ -1,0 +1,15 @@
+prompt = """
+Retry current iteration.
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. Add note: Retrying iteration N
+
+3. Do NOT increment iteration counter
+
+4. Display: Retry Mode - Retrying iteration N
+
+5. Review the goal and recent notes, then try a different approach. The iteration counter will not increase for this attempt.
+"""

@@ -1,0 +1,17 @@
+prompt = """
+Cancel the Ralph Loop.
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. If no active loop, say: No active loop to cancel
+
+3. Update the state:
+   - Set status to cancelled
+   - Update lastUpdate to current time
+   - Add note: Loop cancelled by user
+   - Write back to state.json
+
+4. Display: Loop Cancelled with completed iterations count and note that work files are preserved
+"""

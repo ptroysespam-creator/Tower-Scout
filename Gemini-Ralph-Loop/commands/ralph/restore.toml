@@ -1,0 +1,16 @@
+prompt = """
+Restore checkpoint: {{args}}
+
+## Instructions
+
+1. If no name provided, list available checkpoints from .ralph-state/checkpoints/
+
+2. If name provided:
+   - Read .ralph-state/checkpoints/<name>.json
+   - If not found, say: Checkpoint not found
+   - Copy checkpoint content to .ralph-state/state.json
+   - Set status to paused
+   - Add note: Restored from checkpoint: <name>
+
+3. Display confirmation with checkpoint name, iteration, and resume command
+"""

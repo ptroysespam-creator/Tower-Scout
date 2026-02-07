@@ -1,0 +1,17 @@
+prompt = """
+Show Ralph Loop configuration.
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. If no file, show defaults: Max Iterations: 100, Completion Promise: COMPLETE
+
+3. If file exists, show current config:
+   - ID
+   - Max Iterations
+   - Completion Promise
+   - Current Iteration
+   - Remaining iterations
+   - How to modify with /ralph:adjust
+"""

@@ -1,0 +1,11 @@
+prompt = """
+Reset Ralph Loop state.
+
+## Instructions
+
+1. Delete the .ralph-state/ directory and all its contents
+
+2. Display confirmation that all loop state has been cleared and workspace files are unchanged
+
+3. Suggest starting a new loop with /ralph:start-loop
+"""

@@ -1,0 +1,61 @@
+# Environment variables with API keys - NEVER COMMIT
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+*.log
+enricher.log
+geocoder.log
+harvester.log
+mass_enricher.log
+scout.log
+swarm.log
+universal_pipeline.log
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+radar.db
+
+# Vercel
+.vercel
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Ralph Loop state
+.ralph-state/

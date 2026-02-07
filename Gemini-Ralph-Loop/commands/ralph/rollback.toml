@@ -1,0 +1,15 @@
+prompt = """
+Rollback iterations: {{args}}
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. Parse args for number of steps (default: 1)
+
+3. Reduce iteration count by that number (minimum 1)
+
+4. Add note: Rolled back N iteration(s)
+
+5. Display confirmation with how many rolled back and current iteration
+"""

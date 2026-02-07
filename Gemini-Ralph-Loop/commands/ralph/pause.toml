@@ -1,0 +1,17 @@
+prompt = """
+Pause the Ralph Loop.
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. If no active loop, say: No active loop to pause
+
+3. If status is running:
+   - Set status to paused
+   - Update lastUpdate to current time
+   - Add note: Loop paused
+   - Write back to state.json
+
+4. Confirm: Loop paused at iteration X. Resume with /ralph:resume
+"""

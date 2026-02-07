@@ -1,0 +1,33 @@
+prompt = """
+Start a new Ralph Loop for this task: {{args}}
+
+## Instructions
+
+1. Create the .ralph-state/ directory if it doesn't exist
+
+2. Create .ralph-state/state.json with this structure:
+   - id: loop-<current-timestamp>
+   - status: running
+   - goal: <the task from args>
+   - iteration: 1
+   - maxIterations: 100
+   - completionPromise: COMPLETE
+   - startTime: <current ISO timestamp>
+   - lastUpdate: <current ISO timestamp>
+   - notes: ["Loop started"]
+
+3. Create empty .ralph-state/history.json with: { "iterations": [] }
+
+4. Analyze the task and create an implementation plan
+
+5. Begin working on the first step
+
+6. After completing each step, update state.json:
+   - Increment iteration
+   - Update lastUpdate
+   - Add note about what was done
+
+7. Continue working until complete, then output: <done>COMPLETE</done>
+
+Remember: Your files persist between iterations. Always check existing files before creating new ones.
+"""

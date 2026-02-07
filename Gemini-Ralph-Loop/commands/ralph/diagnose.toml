@@ -1,0 +1,17 @@
+prompt = """
+Diagnose Ralph Loop issues.
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. If no file, say: No loop to diagnose
+
+3. Analyze the state:
+   - Is iteration stuck?
+   - Is it approaching maxIterations?
+   - Is lastUpdate recent?
+   - Are notes showing progress?
+
+4. Display diagnosis with status (HEALTHY, WARNING, or STUCK), checks performed, recommendations, and quick fix commands
+"""

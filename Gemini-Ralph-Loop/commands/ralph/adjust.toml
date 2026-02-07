@@ -1,0 +1,21 @@
+prompt = """
+Adjust loop parameters: {{args}}
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. If no active loop, say: No active loop to adjust
+
+3. Parse args for:
+   - --max-iterations N or -m N
+   - --completion-promise text or -c text
+
+4. Update the values in state.json
+
+5. Add note: Config adjusted with what changed
+
+6. Display new configuration
+
+Example: /ralph:adjust --max-iterations 150
+"""

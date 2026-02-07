@@ -1,0 +1,29 @@
+prompt = """
+# Ralph Loop Help
+
+Ralph Loop is an iterative development system. State is stored in .ralph-state/ directory.
+
+## Commands
+
+- /ralph:start-loop <task> - Start a new loop
+- /ralph:status - Check current status  
+- /ralph:pause - Pause the loop
+- /ralph:resume - Resume paused loop
+- /ralph:complete - Mark as completed
+- /ralph:cancel - Cancel the loop
+- /ralph:history - View iteration history
+- /ralph:checkpoint <name> - Create checkpoint
+- /ralph:restore <name> - Restore checkpoint
+- /ralph:reset - Clear all state
+- /ralph:iterate <note> - Record progress
+
+## Quick Start
+
+1. /ralph:start-loop "Build a calculator app"
+2. Work on the task, I will track iterations
+3. When finished, output: <done>COMPLETE</done>
+
+## State Location
+
+All state is in .ralph-state/state.json - you can read it anytime.
+"""

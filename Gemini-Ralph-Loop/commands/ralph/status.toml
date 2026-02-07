@@ -1,0 +1,19 @@
+prompt = """
+Check Ralph Loop status.
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. If file doesn't exist, display: No active Ralph Loop. Start one with: /ralph:start-loop "Your task"
+
+3. If file exists, display a status report with:
+   - ID
+   - Status (with emoji: running=ðŸ”„, paused=â¸ï¸, completed=âœ…, cancelled=âŒ)
+   - Goal
+   - Progress (Iteration X of Y)
+   - Started time
+   - Last Update time
+   - Recent Notes (last 3)
+   - Next steps suggestion
+"""

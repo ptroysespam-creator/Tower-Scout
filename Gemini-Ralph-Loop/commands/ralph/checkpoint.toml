@@ -1,0 +1,17 @@
+prompt = """
+Create a checkpoint named: {{args}}
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. If no active loop, say: No active loop to checkpoint
+
+3. Create .ralph-state/checkpoints/ directory if needed
+
+4. Copy current state to .ralph-state/checkpoints/<name>.json
+
+5. Add note to state.json: Checkpoint created: <name>
+
+6. Display confirmation with checkpoint name, iteration, and restore command
+"""

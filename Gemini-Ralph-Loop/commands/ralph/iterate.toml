@@ -1,0 +1,21 @@
+prompt = """
+Record progress and increment iteration.
+
+Note: {{args}}
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. Increment iteration by 1
+
+3. Update lastUpdate to current time
+
+4. Add the provided note to the notes array
+
+5. Write back to state.json
+
+6. If iteration >= maxIterations, warn: Approaching iteration limit!
+
+7. Display: Iteration N recorded with the note and progress fraction
+"""

@@ -1,0 +1,15 @@
+prompt = """
+Show Ralph Loop history.
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. If no file exists, say: No loop history available
+
+3. Display the notes array as a numbered timeline showing:
+   - Goal
+   - Current status
+   - All notes in order
+   - Current iteration of maxIterations
+"""

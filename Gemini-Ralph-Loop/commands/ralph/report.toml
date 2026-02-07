@@ -1,0 +1,15 @@
+prompt = """
+Generate a Ralph Loop report.
+
+## Instructions
+
+1. Read .ralph-state/state.json
+
+2. If no file, say: No loop data for report
+
+3. Generate comprehensive report with:
+   - Summary (ID, Goal, Status, Duration)
+   - Progress (Iterations, Completion percentage)
+   - Timeline (numbered list of all notes)
+   - Generated timestamp
+"""

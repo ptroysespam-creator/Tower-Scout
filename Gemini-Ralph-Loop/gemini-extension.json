@@ -1,0 +1,9 @@
+{
+  "name": "gemini-ralph-loop",
+  "version": "1.0.0",
+  "description": "Self-referential iterative development loops for Gemini CLI - Based on the Ralph Wiggum technique by Geoffrey Huntley",
+  "author": "kranthik123",
+  "repository": "https://github.com/kranthik123/Gemini-Ralph-Loop",
+  "license": "MIT",
+  "contextFileName": "GEMINI.md"
+}

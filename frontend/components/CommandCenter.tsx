@@ -54,7 +54,7 @@ interface Project {
     gdvValue: number;
     floors: number;
     units: number;
-    stage: string;
+    stage: 'Planning' | 'Demo' | 'Construction' | 'Active Sales' | 'Completed';
     expectedDelivery: string;
     firstDetected: string;
     firstDetectedTime: number;
@@ -65,10 +65,30 @@ interface Project {
     gallery: string[];
     description: string | null;
     isFavorite: boolean;
-    unitMix?: { type: string; count: number; avgPrice: string }[];
+    unitMix?: { type: string; count: number; avgPrice: string; avgSqft?: number; pricePerSqft?: string }[];
     timeline: TimelineEvent[];
     sourceLinks: string[];
     coordinates: { lat: number; lng: number } | null;
+    product?: {
+        type: string;
+        priceRange: string;
+        pricePerSqft: { min: string; avg: string; max: string };
+        amenities: string[];
+        unitTypes?: string[];
+        parking?: string;
+    };
+    financials?: {
+        landCost: number;
+        hardCosts: number;
+        softCosts: number;
+        totalProjectCost: number;
+        projectedProfit: number;
+        margin: number;
+    };
+    team?: {
+        developer: { name: string; website: string; principals: any[] };
+        salesMarketing: { firm: string; team: any[]; salesGallery: any };
+    };
 }
 
 interface FilterChip {

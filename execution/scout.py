@@ -4,7 +4,7 @@ import logging
 import random
 from urllib.parse import urlparse
 from dotenv import load_dotenv
-from serpapi import GoogleSearch
+from serpapi.google_search import GoogleSearch
 from firecrawl import FirecrawlApp
 import db_client
 

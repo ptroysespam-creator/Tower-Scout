@@ -10,11 +10,13 @@ import certifi
 import os
 
 # Setup logging
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_FILE = os.path.join(SCRIPT_DIR, '..', 'logs', 'geocoder.log')
 logging.basicConfig(
     level=logging.INFO, 
     format='%(asctime)s - %(message)s',
     handlers=[
-        logging.FileHandler('/Users/pablo/Downloads/Preconstruction Radar/geocoder.log'),
+        logging.FileHandler(LOG_FILE),
         logging.StreamHandler()
     ]
 )

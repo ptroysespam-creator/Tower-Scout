@@ -11,10 +11,12 @@ import {
     Map as MapIcon, Maximize2, Plus, Minus, Navigation, Loader2, Link as LinkIcon, ImageIcon,
     Table as TableIcon
 } from 'lucide-react';
+import { mockProjects, mockSources } from '@/lib/demoData';
 
 // --- DATABASE CONFIG ---
 const APP_ID = process.env.NEXT_PUBLIC_INSTANTDB_APP_ID || "3cda2be8-9300-4cbd-bfad-6d77d3118ced";
 const db = init({ appId: APP_ID });
+const USE_DEMO_DATA = true; // Set to false when InstantDB is fully configured
 
 // --- TYPES ---
 type SystemStatus = 'live' | 'syncing' | 'error';
@@ -135,9 +137,17 @@ export default function TowerScoutShell() {
     const [searchInput, setSearchInput] = useState('');
     const [sortMode, setSortMode] = useState<SortOption>('smart_rank');
 
-    const { isLoading, error, data } = db.useQuery({
+    // Use InstantDB or Demo Data
+    const dbQuery = db.useQuery({
         projects: { $: { limit: 5000, order: { serverCreatedAt: 'desc' } }, signals: {} }
     });
+    
+    // Determine data source
+    const isLoading = USE_DEMO_DATA ? false : dbQuery.isLoading;
+    const error = USE_DEMO_DATA ? null : dbQuery.error;
+    const data = USE_DEMO_DATA 
+        ? { projects: mockProjects, sources: mockSources }
+        : dbQuery.data;
 
     // --- DATA MAPPING & DEDUPLICATION ---
     const projects: Project[] = useMemo(() => {
@@ -519,7 +529,7 @@ function ProjectRowPrecision({ project, columns, onSelect }: { project: Project,
         <div onClick={onSelect} className="group flex items-center hover:bg-white/[0.04] transition-all duration-75 h-16 cursor-pointer relative border-b border-white/5">
             {project.isNew && <div className="absolute top-0 left-0 bg-violet-600 text-[8px] font-black text-white px-1.5 py-0.5 z-10 rounded-br shadow-lg">NEW</div>}
             {columns.map(col => renderCell(col))}
-            <div className="w-20 shrink-0 flex items-center justify-center gap-1 h-full bg-white/[0.02]"><button onClick={(e) => { e.stopPropagation(); db.transact(tx.projects[project.id].update({ isFavorite: !project.isFavorite })); }} className={`p-1.5 rounded-md transition-colors ${project.isFavorite ? 'text-violet-400 bg-violet-500/10' : 'text-zinc-600 hover:text-white'}`}><Bookmark size={16} fill={project.isFavorite ? "currentColor" : "none"} /></button><div className="p-1.5 text-zinc-600 hover:text-white rounded-md"><ChevronRight size={16} /></div></div>
+            <div className="w-20 shrink-0 flex items-center justify-center gap-1 h-full bg-white/[0.02]"><button onClick={(e) => { e.stopPropagation(); if (!USE_DEMO_DATA) { db.transact(tx.projects[project.id].update({ isFavorite: !project.isFavorite })); } }} className={`p-1.5 rounded-md transition-colors ${project.isFavorite ? 'text-violet-400 bg-violet-500/10' : 'text-zinc-600 hover:text-white'}`}><Bookmark size={16} fill={project.isFavorite ? "currentColor" : "none"} /></button><div className="p-1.5 text-zinc-600 hover:text-white rounded-md"><ChevronRight size={16} /></div></div>
         </div>
     );
 }

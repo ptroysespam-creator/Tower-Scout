@@ -1,10 +1,14 @@
 import requests
 import json
 import time
+import os
 from datetime import datetime
+from dotenv import load_dotenv
 
-APP_ID = "3cda2be8-9300-4cbd-bfad-6d77d3118ced"
-ADMIN_TOKEN = "ce5bd9f9-d2ed-4f54-bd7c-f3d6cf678031"
+load_dotenv()
+
+APP_ID = os.getenv("INSTANTDB_APP_ID", "3cda2be8-9300-4cbd-bfad-6d77d3118ced")
+ADMIN_TOKEN = os.getenv("INSTANTDB_ADMIN_TOKEN", "ce5bd9f9-d2ed-4f54-bd7c-f3d6cf678031")
 API_BASE_URL = "https://api.instantdb.com/admin"
 
 def query_db(query_dict):
